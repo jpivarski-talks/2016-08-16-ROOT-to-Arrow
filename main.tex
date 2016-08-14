@@ -112,7 +112,7 @@
 \end{frame}
 
 \begin{frame}{DIANA-HEP}
-\begin{itemize}
+\begin{itemize}\setlength{\itemsep}{0.5 cm}
 \item NSF-funded program to modernize physics software \textcolor{gray}{(``Scientific Software Integration (SSI)'' for the ``Software Infrastructure for Sustained Innovation (SI)$^2$.'')}
 \item Small group: 4 PI's, 12 computer scientists, machine learning experts and physicists.
 \item Me: I'm a PhD physicist, helped to commission the LHC during 2006--2011 (just before the Higgs discovery), then spent 5 years as a data science consultant before DIANA-HEP.
@@ -120,7 +120,8 @@
 \end{frame}
 
 \begin{frame}{HEP interest in Big Data/Maching Learning}
-\begin{itemize}
+\vspace{0.25 cm}
+\begin{itemize}\setlength{\itemsep}{0.25 cm}
 \item Bottom-up: several groups are independently looking into using software ``from industry'' for HEP analysis.
 \item Not all students are going to stay in the field: many consider careers in data science.
 \begin{itemize}
@@ -137,7 +138,7 @@
 
 \begin{frame}{Petabytes of data in ROOT format}
 \vspace{0.25 cm}
-\begin{itemize}
+\begin{itemize}\setlength{\itemsep}{0.1 cm}
 \item ROOT file is a container, like HDF5, of any kind of objects, like Python's pickle.
 \item C++ objects, not abstract data types:
 \begin{itemize}
@@ -198,7 +199,7 @@ All of the above run ROOT to read the file itself.
 \end{itemize}
 \end{block}
 
-\begin{block}{Parquet may be an alternative file format}
+\begin{block}{Parquet may be a good alternative file format}
 \begin{itemize}
 \item Same rich type system for complex objects.
 \item Columnar layout on disk for fast reading of partial objects.
@@ -245,7 +246,7 @@ Very little HEP analysis is performed this way: transformations and selections w
 Analysis code in Python has to get rewritten in C++ when it scales up.
 
 \vspace{0.25 cm}
-We stand to benefit from this style of analysis.
+We stand to benefit from more abstraction.
 \end{frame}
 
 \begin{frame}{Problem of structure}
@@ -357,12 +358,12 @@ WHERE
 \begin{frame}{Extensions useful for HEP}
 \vspace{0.25 cm}
 \begin{itemize}
-\item map/flatMap/filter/sort/min/max over collections within a row (operating on an array of structs, not explicitly exploding/joining)
-\item min/max that return top-$N$ for fixed $N$
+\item \textcolor{darkblue}{map/flatMap/filter/sort/min/max} over collections within a row (operating on an array of structs, not explicitly exploding/joining)
+\item \textcolor{darkblue}{min/max} that return top-$N$ for fixed $N$
 \item in-place functions for the above
-\item join(list1, list2, \ldots) or ``cartesian'' for the equivalent of a double-for loop
-\item pairs(list1) that only combines upper-triangular
-\item bestMatch(list1, list2, objectiveFcn): find a bijection between list1 and list2 that minimizes objectiveFcn
+\item \textcolor{darkblue}{join(list1, list2, \ldots)} or ``cartesian'' for the equivalent of a double-for loop
+\item \textcolor{darkblue}{pairs(list1)} that only combines upper-triangular
+\item \textcolor{darkblue}{bestMatch(list1, list2, objectiveFcn)} to find a bijection between list1 and list2 that minimizes objectiveFcn
 \end{itemize}
 
 \vspace{0.5 cm}
